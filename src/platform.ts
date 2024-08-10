@@ -98,7 +98,7 @@ export class DaikinCloudPlatform implements DynamicPlatformPlugin {
             try {
                 const uuid = this.api.hap.uuid.generate(device.getId());
                 const climateControlEmbeddedId: DaikinClimateControlEmbeddedId = device.getDescription().deviceModel === 'Altherma' ? 'climateControlMainZone' : 'climateControl';
-                const name: string = device.getData(climateControlEmbeddedId, 'name', undefined).value;
+                const name: string = 'Test1-Altherma'; //device.getData(climateControlEmbeddedId, 'name', undefined).value;
                 const deviceModel: string = device.getDescription().deviceModel;
 
                 const existingAccessory = this.accessories.find(accessory => accessory.UUID === uuid);
